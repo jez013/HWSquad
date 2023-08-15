@@ -1,7 +1,7 @@
 Atividades para desenvolver:
  -criar arquitetuta do projeto Api - (Rodrigo)
- -Implementar as entidades e repositórios básicos
- -Implementar service
+ -Implementar as entidades e repositórios básicos (Jeziel)
+ -Implementar service(Jeziel)
  -Implemnetar Application
  -Evoluir api usando DTO
  -Teste unitarios com Xunit - (Uriel)
