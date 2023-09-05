@@ -1,43 +1,83 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Gtwave.App.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class MusicoController : ControllerBase
+    public class MusicoController : Controller
     {
-        // GET: api/<MusicoController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        // GET: MusicoController
+        public ActionResult Index()
         {
-            return new string[] { "value1", "value2" };
+            return View();
         }
 
-        // GET api/<MusicoController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET: MusicoController/Details/5
+        public ActionResult Details(int id)
         {
-            return "value";
+            return View();
         }
 
-        // POST api/<MusicoController>
+        // GET: MusicoController/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: MusicoController/Create
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(IFormCollection collection)
         {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
 
-        // PUT api/<MusicoController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // GET: MusicoController/Edit/5
+        public ActionResult Edit(int id)
         {
+            return View();
         }
 
-        // DELETE api/<MusicoController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // POST: MusicoController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, IFormCollection collection)
         {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: MusicoController/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: MusicoController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
